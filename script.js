@@ -1,39 +1,43 @@
-// The base URL should look like the following: https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}.
-
 var APIKey = "548fe189ee5f7583e55d370db86c3c22";
+var searchButton = $("#searchButton");
+var cityInput = $("#cityInput");
+var forecast = $("#forecast");
+var searchForm = $("searchForm");
 
-var city;
-var lat;
-var lon;
+function displayWeatherSearch(result) {
+  console.log("display test");
+  var result = document.createElement("li");
+}
 
-var searchButton = document.getElementById('searchButton');
-var searchInputEl = document.getElementById('cityInput').ariaValueMax;
-
-function displayWeatherSearch() {
-    console.log('display test');
-    var result = document.createElement('li');
-};
-
-var getWeatherSearch = function () {
-  var queryURL =
-    "http://api.openweathermap.org/data/2.5/forecast?lat=" +
-    lat +
-    "&lon=" +
-    lon +
+var getWeatherSearch = function (city) {
+  var apiURL =
+    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    city +
     "&appid=" +
     APIKey;
-  // do i need q= after ? ???
 
-  console.log(queryURL);
-//   e.preventDefault();
-
-  fetch(queryURL)
+  fetch(apiURL)
     .then(function (response) {
       if (response.ok) {
-        console.log(response);
-        return response.json().then(function (data) {
-          console.log(data);
-          displayWeatherSearch(data);
+        response.json().then(function (data) {
+          var lat = data.coord.lat;
+          var lon = data.coord.lon;
+          var apiCoordURL =
+            "http://api.openweathermap.org/data/2.5/forecast?lat=" +
+            lat +
+            "&lon=" +
+            lon +
+            "&appid=" +
+            APIKey;
+
+          fetch(apiCoordURL).then(function (response) {
+            if (response.ok) {
+              response.json().then(function (data) {
+                displayWeatherSearch(data);
+                console.log(data);
+              });
+            }
+          });
         });
       } else {
         console.log("No results found");
@@ -45,4 +49,13 @@ var getWeatherSearch = function () {
     });
 };
 
-searchButton.addEventListener('click', getWeatherSearch);
+function submitSearch(e) {
+  e.preventDefault();
+
+  var city = cityInput.val();
+
+  getWeatherSearch(city);
+}
+
+searchForm.on("submit", submitSearch);
+// ***this is diff then get weather
