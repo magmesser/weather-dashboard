@@ -86,22 +86,29 @@ var displayWeatherSearch = function(weatherData) {
                 // }
                     
             for (var i = 1; i <= 5; i++) {
+                // card
+                var forecastCardEl = document.createElement('div');
+                forecastCardEl.classList = "col-2 py-3 p-1 card text-center text-white bg-info";
 
-            var forecastCardEl = document.createElement('div');
-            forecastCardEl.classList = "col-md-2 card text-white bg-primary";
+                // card body
+                var cardBodyEl = document.createElement('div');
+                cardBodyEl.classList = "card-body p-1";
+                forecastCardEl.append(cardBodyEl)
 
-            // card title
-            var cardTitleEl = document.createElement('h5');
-            cardTitleEl.textContent = moment().add(i, "d").format('l');
-                forecastCardEl.append(cardTitleEl);
+                // card title
+                var cardTitleEl = document.createElement('h5');
+                cardTitleEl.classList = "card-title"
+                cardTitleEl.textContent = moment().add(i, "d").format('l');
+                cardBodyEl.append(cardTitleEl);
 
                 // card UL
                 var cardListEl = document.createElement('ul');
-                forecastCardEl.append(cardListEl);
+                cardListEl.classList = "card-text"
+                cardBodyEl.append(cardListEl);
 
                 // card temp
                 var cardTempEl = document.createElement('li');
-                cardTempEl.textContent = "Temperature: " + data.list[i].main.temp + "°F";
+                cardTempEl.textContent = "Temp: " + data.list[i].main.temp + "°F";
                 cardListEl.append(cardTempEl);
 
                 // // card weather

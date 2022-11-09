@@ -3,6 +3,17 @@
 }
 
 .header {
-    background-color: blue;
     color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-align: left;
+}
+
+#cityContainer {
+    border: 1px solid;
 }
