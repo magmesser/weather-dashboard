@@ -54,15 +54,25 @@
 
             <div class="col-12 col-md-8">
 
-                <div id="forecast" class="row spacebetween"></div>
+                <div id="forecastContainer" class="container"></div>
+                <ul>
+                    <li id="weather">Weather:</li>
+                    <li id="temperature">Temperature:</li>
+                    <li id="humidity">Humidity:</li>
+                    <li id="wind">Wind:</li>
+                </ul>
+                </div>
+                <div id="fiveDayContainer" class="container">5-Day Forecast:
 
-            </div>
+                </div>
         </div>
 
     </main>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!-- javascript sheet -->
     <script src="./script.js"></script>
 </body>
