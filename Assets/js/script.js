@@ -13,7 +13,7 @@ var wind = document.getElementById("wind");
 // api call per city input
 var getWeatherForecast = function (city) {
   var apiURL =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
     "&appid=" +
     APIKey +
@@ -77,7 +77,7 @@ var displayWeatherSearch = function (weatherData) {
   let lon = weatherData.coord.lon;
 
   var apiCoordURL =
-    "http://api.openweathermap.org/data/2.5/forecast?lat=" +
+    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
     lat +
     "&lon=" +
     lon +
