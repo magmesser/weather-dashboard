@@ -15,7 +15,7 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <!-- css sheet  -->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 
@@ -39,38 +39,38 @@
                 </div>
                 <div class="card">
                     <h3 class="card-header text-uppercase">Search History</h3>
-                        <div id="previous-search" class="card-body">
-                            <!-- previous search displayed here  -->
-                        </div>
+                    <div id="previous-search" class="card-body">
+                        <!-- previous search displayed here  -->
+                    </div>
                 </div>
             </div>
             <!-- results section: 1) current weather. 2) 5-Day Forecast: 5 cards  -->
             <div class="col-9" id="cityContainer">
                 <div id="forecastContainer" class="container"></div>
                 <br>
-                    <ul>
-                        <li id="weather" >Weather:</li>
-                        <li id="temperature">Temperature:</li>
-                        <li id="humidity">Humidity:</li>
-                        <li id="wind">Wind:</li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <h2 class="card-title mt-3">5-Day Forecast:</h2>
-                    <div id="fiveDayContainer" class="row justify-content-between">
-                            <!-- filled dynamic JS -->
-                    </div>
+                <ul>
+                    <li id="weather">Weather:</li>
+                    <li id="temperature">Temperature:</li>
+                    <li id="humidity">Humidity:</li>
+                    <li id="wind">Wind:</li>
+                </ul>
+            </div>
+            <div class="container">
+                <h2 class="card-title mt-3">5-Day Forecast:</h2>
+                <div id="fiveDayContainer" class="row justify-content-between">
+                    <!-- filled dynamic JS -->
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <!-- moment.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <!-- javascript sheet -->
-        <script src="./script.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- javascript sheet -->
+    <script src="./Assets/js/script.js"></script>
 </body>
 
 </html>
